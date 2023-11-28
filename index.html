@@ -38,11 +38,14 @@
                         <option value="columns">Columns</option>
                     </select>
                 </div>
-                <button onclick="sortAndHighlight()">Sort</button>
+                <div style="display: flex; justify-content: space-between;">
+                    <button id="btn-sort" onclick="sortAndHighlight()">Sort</button>
+                    <button id="btn-restore" style="display: none;" onclick="restore()">Restore</button>
+                </div>
             </div>
         </div>
         <div class="heatmap">
-            <canvas id="heatmap" width="500" height="500"></canvas>
+            <canvas id="heatmap" width="1000" height="550"></canvas>
         </div>
     </div>
     <script src="main.js"></script>

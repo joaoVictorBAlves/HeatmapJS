@@ -70,6 +70,10 @@ body {
     width: 100%;
 }
 
+.filters button {
+    width: 100%;
+}
+
 .filters input,
 select,
 button {
