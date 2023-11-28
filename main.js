@@ -44,6 +44,7 @@ document.getElementById("fileInput").addEventListener("change", function (e) {
      * Render
      */
     drawHeatmap(aluno_questao, alunos, questoes);
+    document.getElementById("cameraButton").style.display = "block";
   };
 
   reader.readAsText(file);
@@ -52,6 +53,30 @@ document.getElementById("fileInput").addEventListener("change", function (e) {
 // Draw function
 const canvas = document.getElementById("heatmap");
 const ctx = canvas.getContext("2d");
+
+function saveCanvas() {
+  const link = document.createElement('a');
+  link.download = 'heatmap.png'; // Nome do arquivo a ser baixado
+
+  // Criar uma nova imagem a partir dos dados do canvas
+  const image = new Image();
+  image.src = canvas.toDataURL("image/png");
+
+  // Evento de carregamento da imagem
+  image.onload = function () {
+    const imgCanvas = document.createElement('canvas');
+    imgCanvas.width = canvas.width;
+    imgCanvas.height = canvas.height;
+
+    const imgCtx = imgCanvas.getContext('2d');
+    imgCtx.drawImage(image, 0, 0);
+
+    // Converter o canvas para um link para download
+    link.href = imgCanvas.toDataURL("image/png");
+    link.click();
+  };
+}
+
 
 function drawHeatmap(matrix, alunos, questoes, clustered = false) {
   canvas.style.border = "none";

@@ -119,3 +119,18 @@ canvas {
 .logo img {
     max-width: 100px;
 }
+
+#cameraButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#cameraButton span:hover{
+    color: #58B1DD;
+}
+
+#cameraButton span {
+    width: 30px;
+    height: auto;
+}

@@ -6,6 +6,8 @@
     <title>Matrix Visualization</title>
     <link rel="icon" type="image/jpeg" href="./icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,7 +24,14 @@
             <div class="csv">
                 <label for="fileInput">Select a CSV File:</label>
                 <input type="file" id="fileInput" accept=".csv">
-                <span id="fileLabel">Nenhum arquivo escolhido</span>
+                <div style="display: flex; justify-content: space-between;">
+                    <span id="fileLabel">Nenhum arquivo escolhido</span>
+                    <button id="cameraButton" onclick="saveCanvas()" style="display: none;">
+                        <span class="material-symbols-outlined">
+                            photo_camera
+                        </span>
+                    </button>
+                </div>
             </div>
             <div class="filters">
                 <div>
